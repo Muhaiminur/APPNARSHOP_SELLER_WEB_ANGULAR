@@ -1,0 +1,11 @@
+{ 
+
+    "signin": { "bn":"সাইন ইন", "en":"Sign In" },
+    "about": { "bn":"সম্পর্কিত", "en":"About" },
+    "about_us": { "bn":"আমাদের সম্পর্কে", "en":"About Us"},
+    "delivery": { "bn":"বিতরণ নীতি", "en":"Delivery Policy"},
+    "exchange": { "bn":"বিনিময় নীতি", "en":"Exchange Policy"},
+    "privacy": { "bn":"গোপনীয়তা নীতি", "en":"Privacy Policy"},
+    "copyright": { "bn":"জি টেকনোলজিস © সকল স্বত্বাধিকার সংরক্ষিত ", "en":"G Technologies © All Right Reserved 2020"},
+    "info": { "bn":"তথ্যাবলী", "en":"Information" }
+}

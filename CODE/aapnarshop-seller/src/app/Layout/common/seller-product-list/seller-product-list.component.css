@@ -1,0 +1,53 @@
+#parentbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    height: 120px;
+}
+#onebox {
+    float:left;
+    width:20%; 
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    margin: auto;
+}
+#twobox {
+    float:left;
+    width:40%; 
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 5px;
+}
+#threebox {
+    float:left;
+    width:20%; 
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+
+}
+#fourbox {
+    float:left;
+    width:20%; 
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#button {
+    background-color: #fec107;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+  }

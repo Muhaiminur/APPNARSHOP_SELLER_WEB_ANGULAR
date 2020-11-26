@@ -1,0 +1,30 @@
+<mat-card>
+    <fieldset>
+        <div id="parentbox">
+            <div id="onebox">
+                <img *ngIf="!noimage" src="../../assets/icons/general/ic_default_1.svg" [alt]="product?.title"
+                    width="100%" height="100%" align="center">
+                <img *ngIf="noimage" [src]="product?.image" [alt]="product?.title" width="100%" height="100%"
+                    align="center">
+            </div>
+            <div id="twobox">
+                <p style="color:#222222;font-size:16px;">{{product?.title}}</p>
+                <p style="color:#fec107;font-size:14px;">{{product?.remaining+" " +product?.unit+" Available"}}</p>
+                <p style="color:#fec107;font-size:14px;">{{"৳ "+product?.unitPrice+" Per "+product?.unit}}</p>
+            </div>
+            <div id="threebox">
+                <button mat-icon-button disabled aria-label="Example icon-button with a heart icon">
+                    <mat-icon [ngStyle]="{'color':'black'}">indeterminate_check_box</mat-icon>
+                </button>
+                <input  value="0" style="width: 30px; text-align: center;">
+                <button mat-icon-button disabled aria-label="Example icon-button with a heart icon">
+                    <mat-icon [ngStyle]="{'color':'#fec107'}">add_box</mat-icon>
+                </button>
+            </div>
+            <div id="fourbox">
+                <p style="color:#222222;font-size:18px;font-weight: bold;">Details></p>
+                <button id="button">Update</button>
+            </div>
+        </div>
+    </fieldset>
+</mat-card>

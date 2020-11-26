@@ -1,0 +1,45 @@
+<header id="header-back">
+
+    <div id="header-parent">
+        <div id="header-left">
+            <img src="../../assets/icons/general/app_icon2.svg" style="height: 10vh;">
+        </div>
+        <div id="header-right">
+            <span style="font-weight: bold;padding-left: 5px;">EN</span>
+            <span style="font-weight: bold;padding-left: 5px;">|</span>
+            <span style="font-weight: normal;padding-left: 5px;">BN</span>
+
+            <!-- <p style="display: flex;justify-content: center;align-items: center; padding-top: 10px;">EN|BN</p> -->
+            <button mat-button [matMenuTriggerFor]="belowMenu">
+                <mat-icon>account_circle</mat-icon>
+                <span style="font-weight: bold;padding-left: 5px;">{{user_name}}</span>
+            </button><!-- <button mat-button [matMenuTriggerFor]="belowMenu">Below</button> -->
+
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+        </div>
+    </div>
+    <mat-tab-group mat-align-tabs="center" #tabGroup style="border-radius: 25px;"
+        (selectedTabChange)="onLinkClick($event)">
+        <mat-tab label="Dashboard">
+        </mat-tab>
+        <mat-tab label="Order">
+        </mat-tab>
+        <mat-tab label="Product">
+        </mat-tab>
+        <mat-tab label="Offer">
+        </mat-tab>
+        <mat-tab label="Report">
+        </mat-tab>
+        <mat-tab label="Profile">
+        </mat-tab>
+        <mat-tab label="Rating">
+        </mat-tab>
+        <mat-tab label="Notifcation">
+        </mat-tab>
+        <!-- <mat-tab label="Settings">
+        </mat-tab> -->
+    </mat-tab-group>
+</header>

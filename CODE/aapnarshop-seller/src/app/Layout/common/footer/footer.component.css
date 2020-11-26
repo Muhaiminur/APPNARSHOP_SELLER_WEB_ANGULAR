@@ -1,0 +1,48 @@
+.footer-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    /* align-content: center;  */
+    /* justify-content: space-around; */
+    padding: 12px 12px 12px 12px;
+    bottom: 0;
+    background-color: #393738;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.footer {
+    bottom: 0;
+    background-color: #393738;
+}
+
+.footer-container > div {
+    min-width: 200px;
+    height: 100%;
+    padding: 15px 0 15px 0;
+    color: white;
+} 
+
+a[ng-reflect-router-link]:link {
+    color: white;
+    text-decoration: none;
+    padding: 20px 0 20px 0;
+}
+
+a[ng-reflect-router-link]:visited,
+a[ng-reflect-router-link]:active {
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+a[ng-reflect-router-link]:hover {
+    color: gainsboro;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.footer-icons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}

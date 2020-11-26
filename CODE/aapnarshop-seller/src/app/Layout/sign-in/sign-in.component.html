@@ -1,0 +1,138 @@
+<fieldset>
+    <mat-tab-group mat-align-tabs="center" #tabGroup>
+        <mat-tab label="SIGN IN">
+            <form #logForm="ngForm">
+                <div style="width: 100%; margin-top: 50px;">
+                    <div style="width: 50%;float: left;">
+                        <img src="../../assets/icons/general/app_icon.svg" style="margin: 10px;">
+                    </div>
+                    <div style="width: 50%;float: left;text-align: center;">
+                        <mat-card style="margin: auto;width: 50%;border: 2px solid #222222;padding: 10px;">
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Phone Number/Email</mat-label>
+                                <input matInput [formControl]="login_user_form" [(ngModel)]="userName" required>
+                                <mat-error *ngIf="login_user_form.invalid">Enter Phone Number/Email</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Password</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" [formControl]="login_pass_form"
+                                    [(ngModel)]="password" required>
+                                <button mat-icon-button matSuffix type="button" (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="login_pass_form.invalid">Enter<strong>Password</strong></mat-error>
+                            </mat-form-field>
+                            <p style="color:#2352c6;font-size:12px; text-align: right;font-weight: bold;">Forgot
+                                Password?
+                            </p>
+
+                            <button class="button" (click)="signin_work()">Sign In</button>
+                            <p style="font-size:12px;">Do You Have Any Shop?</p>
+                            <p style="font-size:12px;">Sell Your Product in Your Own Area Online?</p>
+                            <p style="color:#2352c6;font-size:18px; text-align: center;font-weight: bold;cursor: pointer"
+                                (click)="tabGroup.selectedIndex=1">Register For
+                                Online Shop</p>
+                            <p style="font-size:12px; margin-top: 70px;">By signin In,you agree with the <a
+                                    href="https://www.w3schools.com">Terms of service</a>
+                                and <a href="https://www.w3schools.com">Privacy Policy</a>
+                            </p>
+
+                        </mat-card>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+        <mat-tab label="SIGN UP">
+            <form #regForm="ngForm">
+                <div style="width: 100%; margin-top: 50px;">
+                    <div style="width: 50%;float: left;">
+                        <img src="../../assets/icons/general/app_icon.svg" style="margin: 10px;">
+                    </div>
+                    <div style="width: 50%;float: left;text-align: center;">
+                        <mat-card style="margin: auto;width: 50%;border: 2px solid #222222;padding: 10px;">
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Full Name</mat-label>
+                                <input matInput [formControl]="name_form" [(ngModel)]="sellerName" required>
+                                <mat-error *ngIf="name_form.invalid">Enter Full Name</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Phone Number</mat-label>
+                                <input matInput [formControl]="mbl_form" [(ngModel)]="phone"
+                                    onkeyup="this.value=this.value.replace(/[^\d]/,'')" required>
+                                <mat-error *ngIf="mbl_form.invalid">Enter Phone Number</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Email</mat-label>
+                                <input matInput [formControl]="email_form" [(ngModel)]="email" required>
+                                <mat-error *ngIf="email_form.invalid">Enter Email</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Select Shop Type</mat-label>
+                                <mat-select [formControl]="shop_type_form" [(value)]="shopType" required>
+                                    <mat-option>None</mat-option>
+                                    <mat-option *ngFor="let shop of shopcat_list" [value]="shop.shopCategoryId">
+                                        {{shop.shopCategoryTitle}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Shop Name</mat-label>
+                                <input matInput [formControl]="shop_name_form" [(ngModel)]="shopName" required>
+                                <mat-error *ngIf="shop_name_form.invalid">Enter Shop Name</mat-error>
+                            </mat-form-field>
+                            <div>
+                                <mat-form-field appearance="fill" style="width: 45%; margin-right: 5px;">
+                                    <mat-label>Division</mat-label>
+                                    <mat-select [formControl]="div_form" (selectionChange)="divison_select($event)"
+                                        required>
+                                        <mat-option>None</mat-option>
+                                        <mat-option *ngFor="let divi of div_list" [value]="divi">{{divi.division}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" style="width: 45%; margin-left: 5px;">
+                                    <mat-label>District</mat-label>
+                                    <mat-select [formControl]="dis_form" (selectionChange)="district_select($event)"
+                                        required>
+                                        <mat-option>None</mat-option>
+                                        <mat-option *ngFor="let dis of dis_list" [value]="dis">{{dis.district}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>City</mat-label>
+                                <mat-select [formControl]="city_form" (selectionChange)="city_select($event)" required>
+                                    <mat-option>None</mat-option>
+                                    <mat-option *ngFor="let city of city_list" [value]="city">{{city.city}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Area</mat-label>
+                                <mat-select [formControl]="area_form" [(value)]="areaId"
+                                    (selectionChange)="area_select($event)" required>
+                                    <mat-option>None</mat-option>
+                                    <mat-option *ngFor="let area of area_list" [value]="area.areaId">{{area.area}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Shop Address</mat-label>
+                                <input matInput [formControl]="address_form" [(ngModel)]="address" required>
+                                <mat-error *ngIf="address_form.invalid">Enter Shop Address</mat-error>
+                            </mat-form-field>
+                            <button class="button" (click)="signup_work()">Sign Up</button>
+                            <p style="font-size:12px; margin-top: 70px;">By signin up,you agree with the <a
+                                    href="https://www.w3schools.com">Terms of service</a>
+                                and <a href="https://www.w3schools.com">Privacy Policy</a>
+                            </p>
+
+                        </mat-card>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
+</fieldset>

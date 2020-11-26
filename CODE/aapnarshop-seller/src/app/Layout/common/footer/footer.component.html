@@ -1,0 +1,33 @@
+<footer class="footer-container">
+    <div class="footer-cols"><b><span [innerHTML]="_about | async"></span></b>
+        <div><a routerLink="/about" routerLinkActive="active"><span [innerHTML]="_aboutus | async"></span></a></div>
+        <div><a routerLink="/delivery" routerLinkActive="active"><span [innerHTML]="_delivery | async"></span></a></div>
+        <div><a routerLink="/exchange" routerLinkActive="active"><span [innerHTML]="_exchange | async"></span></a></div>
+        <div><a routerLink="/privacy" routerLinkActive="active"><span [innerHTML]="_privacy | async"></span></a></div>
+    </div>
+
+    <div class="footer-cols"><b>Info</b>
+        <div>Size Guide</div>
+        <div>Store Locator</div>
+    </div>
+
+    <div class="footer-cols"><b>Customer Support</b>
+        <div>+8801711080468</div>
+        <div>Sunday-Thursday 10:30AM to 5.00PM</div>
+        <div>Head Office: 82/1-2, Laboratory Road, Dhaka </div>
+        <div>Corporate Office: House 16, Road 30, Gulshan 1, Dhaka </div>
+    </div>  
+    
+    <div class="footer-cols"><b>Follow Us</b>
+        <div class="footer-icons">
+            <mat-icon svgIcon="instagram"></mat-icon>
+            <mat-icon svgIcon="facebook"></mat-icon>
+            <mat-icon svgIcon="twitter"></mat-icon>
+            <mat-icon svgIcon="whatsapp"></mat-icon>
+        </div>
+    </div>
+    
+    <p style="clear: both;"><span [innerHTML]="_copyright | async"></span></p>
+
+</footer>
+

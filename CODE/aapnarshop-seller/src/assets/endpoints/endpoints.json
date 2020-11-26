@@ -1,0 +1,11 @@
+{
+    "shop_type": "shop/category",
+    "div_list": "location/division",
+    "dis_list": "location/district",
+    "city_list": "location/city",
+    "area_list": "location/area",
+    "shop_reg": "registration",
+    "shop_login": "login",
+    "dashboared": "dashboard",
+    "productlist": "product/all"
+}
